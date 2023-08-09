@@ -1,0 +1,29 @@
+<div style="background-color:#888888">
+  <app-navbar></app-navbar>
+</div>
+<div class="container">
+  <div class="card-group  row-cols-sm-2 row-cols-md-3  row-cols-lg-4 g-4 ">
+    <div *ngFor="let cat of category | paginate:{ itemsPerPage: 8, currentPage: p }"
+         class="col row-cols-lg-4">
+      <div  class="card">
+       <!-- <img src="./assets/images/hizmet/hizmet{{cat.id}}.webp" class="card-img-top" alt="...">-->
+        <img src="https://cdn.armut.com/images/services/tr:w-278,h-168/00191-ev-temizligi_thumb_875x500.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4>{{cat.name}} </h4>
+          <p>2.209 profesyonel</p>
+          <p>4,8 (13.707 onaylı yorum)</p>
+          <a href="/teklif/{{cat.id}}" class=" teklif-button btn btn-primary">Teklif Al</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div  class="hizmetler-link">
+    <h3 style="text-align: center; padding-bottom: 35px; padding-top:30px ">{{hizmetTitle}}</h3>
+    <div *ngFor="let name of veriler.categoryName ; let i = index" >
+        <a class="hizmet-link-buton " href="/teklif/{{veriler.categoryId[i]}}">{{name}}</a>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,62 @@
+.card {
+  cursor: pointer;
+  margin: 10px;
+  width: 18rem;
+  height: 24rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.teklif-button {
+  width: 89%;
+  font-weight: bold;
+  background-color: #2cb34f;
+  border: none;
+  position: absolute;
+  bottom: 10px;
+  color: white;
+
+}
+.teklif-button:hover {
+  background-color: #2cb34f;
+}
+@media screen and (max-width: 769px) {
+  .card {
+    width: 16rem;
+  }
+
+}
+@media screen and (max-width: 576px) {
+  .card {
+    margin: auto;
+  }
+
+}
+.dark-overlay {
+  background: #000;
+  display: block;
+  height: 175px;
+  opacity: 0;
+  position: absolute;
+  transition: all .5s cubic-bezier(.23, 1, .32, 1);
+  -webkit-transition: all .5s cubic-bezier(.23, 1, .32, 1);
+  width: 100%;
+  z-index: 2;
+}
+
+.card:hover {
+  .dark-overlay {
+    opacity: 25%;
+  }
+}
+
+pagination-controls{
+  display: flex;
+  justify-content: right;
+
+}
+.container{
+}
+a{
+  color:#1CA03E ;
+  text-decoration: none;
+}
+

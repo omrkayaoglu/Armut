@@ -1,0 +1,33 @@
+.btn{
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+}
+.btn:hover{
+  opacity: 60%;
+}
+.btn-outline-success{
+  color: #29FF30;
+  border-color: #29FF30;
+
+}
+@media screen  and (max-width: 1200px){
+
+  .btn-outline-success{
+    font-size: 14px;
+  }
+  .btn{
+    font-size: 14px;
+  }
+}
+@media screen  and (max-width: 1060px){
+  .btn-outline-success{
+    font-size: 12px;
+  }
+  .btn{
+    font-size: 12px;
+  }
+}
+

@@ -1,0 +1,39 @@
+<app-simple-navbar></app-simple-navbar>
+<h2 class="pt-4 mt-5 ps-5">Teklif Listesi</h2>
+<div *ngIf="worklistBids.length">
+  <div *ngFor="let item of worklistBids; let i =index">
+    <div *ngIf="item.length">
+      <div style="align-items: center" class="d-flex flex-wrap mx-5">
+        <div class=" work-list-card card  d-flex flex-wrap mx-1 my-2">
+          <div class="card-body ">
+            <div style="position:relative;" class="">
+              <table class=" table table-striped table-sm ">
+                <thead>
+                <tr class="row ps-3">
+                  <th class="ps-2 col-2" scope="col">Teklif</th>
+                  <th class="col-5" scope="col">Mesaj</th>
+                  <th class="col-3" scope="col">Çalışan</th>
+                  <th class="col-2" scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let value of item" class="row ps-3" >
+                  <td class="ps-2 col-2">{{value.price}} TL</td>
+                  <td class="col-5">{{value.message}}</td>
+                  <td class="col-3">{{value.workerName}} {{value.workerSurname}}</td>
+                  <td style="justify-content: right" class="col-2 d-flex ">
+                    <button type="button" class="btn durumButon" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="Tooltip on top"><i class="fas fa-check "></i></button>
+                    <button type="button" class="btn durumButon" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="Tooltip on top"><i class="fas fa-times"></i></button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<app-simple-navbar></app-simple-navbar>
+<div class="giris-main-class">
+  <div class="container {{buttonClass}}" id="container">
+    <div class="form-container sign-up-container">
+      <form (submit)="$event.preventDefault()">
+        <h1>Hesap Oluştur</h1>
+        <div class="social-container">
+        </div>
+        <input #name  type="text" placeholder="İsim" />
+        <input #surname type="text" placeholder="Soyisim" />
+        <input #phoneNumber type="tel" placeholder="Telefon Numarası" />
+        <input #email type="email" placeholder="Email" />
+        <input #password type="password" placeholder="Şifre" />
+        <input #Address  type="text" placeholder="Adres" />
+        <div style="display: flex" class="radioButton">
+          <div style="display: flex;padding: 0 20px">
+            <input  [(ngModel)]="userType" style="margin-right: 5px" id="user" name="user-type"  type="radio" value="user"  >
+            <label for="user"> Kullanıcı </label>
+          </div>
+          <div style="display: flex;padding: 0 20px">
+            <input [(ngModel)]="userType" style="margin-right: 5px" id="worker" name="user-type"  type="radio" value="worker" >
+            <label for="worker"> Çalışan </label>
+          </div>
+        </div>
+
+        <button class="all-button" (click)="signUp(name.value,surname.value,phoneNumber.value,email.value,password.value,userType,Address.value)">ÜYE OL</button>
+
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form (submit)="$event.preventDefault()">
+        <h1>Giriş yap</h1>
+        <div class="social-container">
+        </div>
+        <input #emailSignIn type="email" placeholder="Email" />
+        <input #passwordSignIn type="password" placeholder="Şifre" />
+        <a href="#">Parolanızı mı unuttunuz?</a>
+        <button class="all-button" (click)="signIn(emailSignIn.value,passwordSignIn.value)">GİRİŞ YAP</button>
+
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Hoşgeldiniz</h1>
+          <p>Bizimle bağlantıda kalmak için lütfen kişisel bilgilerinizle giriş yapın</p>
+          <button (click)="signInButton()" class="ghost  " id="signIn">GİRİŞ YAP</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Merhaba</h1>
+          <p>Kişisel bilgilerinizi girin ve bizimle yolculuğa başlayın</p>
+          <button  (click)="signUpButton()" class="ghost " id="signUp">ÜYE OL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
